@@ -1,4 +1,5 @@
 import AboutMe from "./components/AboutMe/AboutMe";
+import Contact from "./components/Contact/Contact";
 import HeroSection from "./components/HeroSection/HeroSection";
 import MyWork from "./components/MyWorks/MyWork";
 import Navbar from "./components/Navbar/Navbar";
@@ -12,6 +13,7 @@ const App = () => {
       <AboutMe />
       <Services />
       <MyWork />
+      <Contact />
     </div>
   );
 };
