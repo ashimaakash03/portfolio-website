@@ -1,5 +1,6 @@
 import AboutMe from "./components/AboutMe/AboutMe";
 import HeroSection from "./components/HeroSection/HeroSection";
+import MyWork from "./components/MyWork/MyWork";
 import Navbar from "./components/Navbar/Navbar";
 import Services from "./components/Services/Services";
 
@@ -10,6 +11,7 @@ const App = () => {
       <HeroSection />
       <AboutMe />
       <Services />
+      <MyWork />
     </div>
   );
 };
