@@ -33,3 +33,7 @@
   display: flex;
   margin: auto;
 }
+.anchor-link {
+  color: white;
+  text-decoration: none;
+}

@@ -6,7 +6,7 @@ import location_icon from "../../assets/images/location_icon.svg";
 
 const Contact = () => {
   return (
-    <div className="contact">
+    <div className="contact" id="contact">
       <div className="contact-title">
         <h1>Get In Touch...</h1>
         <img src={theme_pattern} alt="" />
@@ -41,7 +41,12 @@ const Contact = () => {
           <label htmlFor="">Email: </label>
           <input type="email" placeholder="Enter your e-mail" name="email" />
           <label htmlFor="">Message: </label>
-          <textarea name="message" rows="8" cols="10" placeholder="Compose your message..."/>
+          <textarea
+            name="message"
+            rows="8"
+            cols="10"
+            placeholder="Compose your message..."
+          />
           <button type="submit" className="send-message">
             Send Message
           </button>
