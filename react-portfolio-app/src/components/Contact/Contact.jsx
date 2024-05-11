@@ -3,8 +3,40 @@ import theme_pattern from "../../assets/images/theme_pattern.svg";
 import mail_icon from "../../assets/images/mail_icon.svg";
 import call_icon from "../../assets/images/call_icon.svg";
 import location_icon from "../../assets/images/location_icon.svg";
+import { useState } from "react";
 
 const Contact = () => {
+  const [result, setResult] = useState("");
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "86e7dde4-ee76-4d23-bd38-611a0a3a338c");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: formData,
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+      alert(data.message);
+    } else {
+      console.log("Error", data);
+      alert(data.message);
+      setResult(data.message);
+    }
+  };
+
   return (
     <div className="contact" id="contact">
       <div className="contact-title">
@@ -35,7 +67,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <form className="contact-right">
+        <form onSubmit={onSubmit} className="contact-right">
           <label htmlFor="">Name: </label>
           <input type="text" placeholder="Enter your name" name="fullName" />
           <label htmlFor="">Email: </label>
